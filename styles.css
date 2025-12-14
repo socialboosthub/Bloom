@@ -1,0 +1,496 @@
+/* Reset & Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", Arial, sans-serif;
+  color: #222;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px 26px;
+  background: rgba(255, 255, 255, 0.98);
+  z-index: 1000;
+  border-bottom: 1px solid #eee;
+}
+.brand-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo {
+  width: 72px;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+  object-fit: cover;
+}
+.site-title {
+  font-family: "Italianno", cursive;
+  font-size: 22px;
+  color: #0a5c38;
+  transform: scale(1.2);
+  display: inline-block;
+  margin-left: 4px;
+}
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  gap: 22px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  padding: 6px 0;
+  font-weight: 600;
+  color: #333;
+}
+.hamburger {
+  display: none;
+  background: none;
+  border: 0;
+  padding: 6px;
+  cursor: pointer;
+}
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background: #333;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: 0.25s;
+}
+
+/* HERO / INTRO */
+main {
+  padding-top: 92px;
+} /* account for fixed navbar */
+.intro-section {
+  max-width: 900px;
+  margin: 26px auto;
+  padding: 22px;
+  background: #dff7e6;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+.hero-title {
+  margin: 0 0 8px 0;
+  font-size: 26px;
+  color: #083a23;
+}
+.brand {
+  color: #e91e63;
+  font-weight: 700;
+}
+.hero-copy {
+  color: #184;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+/* SLIDER */
+.slider {
+  position: relative;
+  width: 100%;
+  max-height: 420px;
+  overflow: hidden;
+  margin-top: 18px;
+}
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: opacity 0.9s ease;
+}
+.slide.active {
+  position: relative;
+  opacity: 1;
+}
+.image-container {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+}
+.center-link {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 2px solid #ff8c00;
+  font-weight: 700;
+  color: #ff8c00;
+}
+
+/* BOUQUET SECTION */
+#bouquet-section {
+  background: linear-gradient(135deg, #0a5c38, #063d27);
+  padding: 60px 20px;
+  color: #fff;
+  text-align: center;
+}
+.section-title {
+  font-size: 36px;
+  color: #d4af37;
+  margin: 0 0 28px;
+  font-weight: 800;
+}
+
+/* Grid: 2 per row on desktop, 1 on small screens */
+.bouquet-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  gap: 28px;
+  grid-template-columns: 1fr;
+  padding: 0 16px;
+}
+@media (min-width: 720px) {
+  .bouquet-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  /* keep 2 columns on very large screens for your request */
+  .bouquet-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.bouquet-card {
+  background: #fff;
+  color: #222;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  transition: transform 0.35s ease;
+  display: flex;
+  flex-direction: column;
+}
+.bouquet-card:hover {
+  transform: translateY(-8px);
+}
+
+.bouquet-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: yellow;
+}
+@media (max-width: 480px) {
+  .bouquet-card img {
+    height: 220px;
+  }
+}
+
+.card-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+.bouquet-card h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #0a5c38;
+  font-weight: 700;
+}
+.price {
+  color: #d4af37;
+  font-weight: 800;
+}
+
+/* WhatsApp button */
+.btn-whatsapp {
+  display: inline-block;
+  margin-top: auto;
+  background: #25d366;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 28px;
+  font-weight: 800;
+}
+
+/* CONTACT / FORM */
+.contact-section {
+  padding: 40px 18px;
+  background: #fff;
+}
+.order-title {
+  text-align: center;
+  color: #e67a00;
+  margin: 0 0 18px 0;
+  font-size: 24px;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 400px;
+  margin: 14px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 0 8px;
+}
+
+/* Fieldset full width, modern look */
+.contact-form fieldset {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #e6e6e6;
+  padding: 16px;
+  background: #fafafa;
+}
+.contact-form legend {
+  font-weight: 700;
+  padding: 0 6px;
+}
+
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #333;
+}
+.contact-form label span {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Inputs and selects full width */
+.contact-form input[type="text"],
+.contact-form input[type="tel"],
+.contact-form input[type="email"],
+.contact-form input[type="search"],
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #dcdcdc;
+  font-size: 15px;
+  background: #fff;
+  outline: none;
+}
+.contact-form select {
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 14px;
+  padding-right: 36px;
+}
+
+/* Radio group */
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 6px;
+}
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.radio-group input {
+  margin: 0;
+  transform: scale(1.02);
+}
+
+/* Submit */
+#submitBtn {
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: 0;
+  background: #0a5c38;
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+/* Popup */
+#popup {
+  position: fixed;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 2000;
+}
+.popup-content {
+  background: #fff;
+  padding: 22px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 360px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+#popupText {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+/* CONTACT AREA */
+#contact-area {
+  padding: 48px 18px;
+  background: #062f1f;
+  color: #fff;
+  text-align: center;
+}
+.contact-icons-new {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+.icon-circle-new {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0f6b45;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.icon-circle-new img {
+  width: 34px;
+  height: 34px;
+  filter: brightness(0) invert(1);
+}
+.map-container-new {
+  max-width: 700px;
+  margin: 16px auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 255, 100, 0.06);
+}
+.map-container-new iframe {
+  width: 100%;
+  height: 320px;
+  border: 0;
+}
+
+/* Responsive nav (mobile) */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 68px;
+    right: -100%;
+    width: 220px;
+    height: 100vh;
+    padding: 20px;
+    background: #fff;
+    flex-direction: column;
+    gap: 18px;
+    box-shadow: -8px 0 30px rgba(0, 0, 0, 0.06);
+    transition: right 0.25s ease;
+  }
+  .nav-links.open {
+    right: 0;
+  }
+  .hamburger {
+    display: block;
+  }
+}
+
+/* minor tweaks */
+body,
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+}
+
+#bouquet-section {
+  scroll-margin-top: 120px; /* adjust if needed */
+}
+
+#contact {
+  scroll-margin-top: 120px;
+}
+#bouquet-section-anchor {
+  height: 100px; /* how much you want to offset */
+  margin-top: -100px;
+}
+#flowers-anchor {
+  display: block;
+  position: relative;
+  top: -140px; /* offset for navbar height */
+  height: 0;
+}
+.slide {
+  position: relative;
+}
+
+.center-link {
+  position: absolute;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.slide img {
+  pointer-events: none;
+}
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute; /* Make slides overlap */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* ensure same height */
+  opacity: 0; /* hide inactive slides */
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 5; /* show above other slides */
+}
